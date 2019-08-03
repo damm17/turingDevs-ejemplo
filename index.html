@@ -29,6 +29,9 @@
                 <li class="nav-item">
                     <a class="nav-link" id="pills-gitbash-tab" data-toggle="pill" href="#pills-gitbash" role="tab" aria-controls="pills-gitbash" aria-selected="false">3. GitBash</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-online-tab" data-toggle="pill" href="#pills-online" role="tab" aria-controls="pills-online" aria-selected="false">4. Online</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -82,6 +85,41 @@
                 <h2>4. Trabajar en nuestro repositorio</h2>
                 <p>Ok, ya tenemos el repositorio clonado y entramos a su carpeta. ¿Ahora qué? Bien, esta sería la etapa en la que uno empieza a trabajar en su proyecto. Entonces por ejemplo, crea su archivo .html y arma una estructura, luego crea su carpeta de css y agrega una hoja de estilos para que no sea un asco lo que se ve y así sucesivamente.<br>
                 Nosotros vamos a asumir que ya terminamos de trabajar con nuestros archivos, así que al final nos queda algo como esto:</p>
+                <a href="img/gb-4.jpg" data-lightbox="gb-4"><img src="img/gb-4.jpg" alt="" class="img-thumbnail"></a>
+                <p>Como verán, agregamos algunas carpetas y archivos a nuestro repositorio. Pero hay una carpeta particular que está desde el principio y que por defecto viene oculta: la carpeta .git<br>
+                Tengan cuidado con esa porque es la que se ocupa de hacer funcionar el repositorio (hablando mal y pronto), así que no la borren, no la muevan, no le cambien nada, porque después les  van a salir errores por todos lados o directamente van a romper el repositorio y pueden llegar a perder muchas horas de trabajo.<br>
+                Dejando eso de lado, una vez que terminamos de trabajar lo más común es chequear el estado de los archivos en nuestro repositorio. Para eso usamos <code>git status</code><br>
+                En este caso lo que nos está diciendo es que los archivos nuevos que acabamos de agregar al proyecto, no están siendo monitoreados por git. Y un poco la gracia de usar esta herramienta es esa, que haya un seguimiento de los cambios que vamos haciendo para tener registro de versiones y demás.</p>
+                <h2>5. Seguimiento de archivos</h2>
+                <p>Por ende, el paso siguiente es agregar estos archivos al monitoreo, o lo que se conoce como "Staging Area". Para eso usamos el comando <code>git add -A</code> o <code>git add --all</code></p>
+                <a href="img/gb-5.jpg" data-lightbox="gb-5"><img src="img/gb-5.jpg" alt="" class="img-thumbnail"></a>
+                <p>Ahora cuando vuelvo a ejecutar un <code>git status</code> ya no me aparecen en rojo los archivos, sino en verde, y si se fijan la propia consola me da dos directivas: Por un lado me dice, 'che mirá, tenés todos estos archivos que tienen cambios y los podés guardar (hacer un commit)' y por otro me avisa: 'Si te equivocaste y no querías monitorear todos estos archivos podés hacer un reset'. En resumen, un <code>git reset</code> así por default, saca los archivos del Staging Area y los vuelve a dejar sin monitoreo.<br>
+                Como consejo, por ahora no le den mucha bola a lo del <code>git reset</code>. En la mayoría de los casos uno quiere agregar todo para hacerle el seguimiento y luego ir haciendo los commits a medida que avanza con su trabajo para versionarlo.</p>
+                <h2>6. Hacer el primer commit</h2>
+                <p>Bueno, ya tenemos nuestros archivos en seguimiento, github nos dice que está todo ok para guardar, yo ya sé que avancé lo suficiente con mi trabajo como para tener un primer registro de todo lo que hice hasta ahora, así que vamos a hacer el primer commit.<br>
+                Para eso vamos a ejecutar el comando <code>git commit -m "@mensaje_del_commit"</code><br>
+                Para tener en cuenta: El mensaje del commit es obligatorio y la idea es que sea lo más descriptivo posible, pero sin escribir todo un parráfo tampoco. Esto nos sirve a nosotros para tener un resumen de las cosas que se guardaron a este punto en nuestro proyecto y sobretodo también le sirve a los demás que visiten nuestro repositorio y puedan tener una idea de qué cambios se estuvieron haciendo en el mismo.<br>
+                Luego de hacer el commit, si volvemos a ejecutar un <code>git status</code> vamos a ver que ya no tenemos cambios pendientes.</p>
+                <a href="img/gb-6.jpg" data-lightbox="gb-6"><img src="img/gb-6.jpg" alt="" class="img-thumbnail"></a>
+                <h2>7. Publicar nuestros cambios</h2>
+                <p>Ya hicimos el commit, tenemos todo guardado y no vamos a hacer más cambios por el día de hoy ¿cómo publico todos esos cambios que hice en mi computadora? Bien, para esto git nos ofrece el siguiente comando <code>git push</code> que en resumen lo que va a hacer es subir a nuestro repositorio online, todos los commits que nosotros tengamos en nuestro repositorio local. Pero git no es boludo y primero se va a fijar que la versión online sea la misma que tu versión local (previa a tus cambios). Es decir, se va a fijar que en tu repositorio online siga habiendo exactamente lo mismo que cuando hiciste el <code>git clone</code> y si no fuera así, te va a tirar un alerta.<br>
+                Por eso, una buena práctica es ejecutar otro comando antes del <code>git push</code> y es uno muy parecido que se escribe <code>git pull</code>. Con el pull lo que vamos a hacer es revisar si el repositorio online tuvo algún cambio (en el interin entre que lo cloné y trabajé con mis archivos), y si lo hubiera me los va a descargar y a actualizar.<br>
+                En este ejemplo, nosotros sabemos que estamos trabajando solos y que nadie subió nada a nuestro repositorio online. De todas formas vamos a probar de hacer un pull primero y luego un push.</p>
+                <a href="img/gb-7.jpg" data-lightbox="gb-7"><img src="img/gb-7.jpg" alt="" class="img-thumbnail"></a>
+                <p>Cabe destacar, que a los comandos de pull y push se les agregaron dos parámetros <code>origin master</code>. Por el momento, vamos a usarlo siempre de esta forma pero para que tengan en cuenta los más curiosos.<br>
+                'Origin' hace referencia al repositorio de origen al que nos conectamos. En general uno siempre tabaja con el 'origin', pero puede haber casos en los que por ejemplo se clona un repo, pero después se suben a un repo distinto, entonces ahí hay que hacer unos ajustes para que podamos trabajar con un repositorio remoto.<br>
+                'Master' por su parte hace referencia al nombre de la rama (branch) en la que estamos trabajando, o mejor dicho de la que queremos bajar o subir contenido. De vuelta, nosotros por ahora no tenemos más ramas así que vamos a trabajar con master, pero sí esto es mucho más común y de hecho voy a mostrar como hacer otras ramas y demás. Pero lo vamos a ver más adelante.</p>
+                <div class="alert bg-success"><p>Si llegaste hasta acá, felicitaciones! Ya deberías tener tu primer proyecto subido a GitHub. Ahora en el último paso te muestro cómo ver tu página online</p></div>     
+            </div>
+            <div class="tab-pane fade" id="pills-online" role="tabpanel" aria-labelledby="pills-online-tab">
+                <h2>1. Ver nuestro proyecto online y compartir</h2>
+                <p>Ahora que ya subimos todo (y asumiendo que trabajamos con un .html) vamos a volver a la página de GitHub y vamos a entrar a nuestro repositorio como cuando copiamos la URL para clonarlo.<br>
+                Esta vez, vamos a apretar en el botón que dice 'Branch: master' y en recuadro vamos a escribir <code>gh-pages</code>. Luego elegimos la opción que nos va a aparecer que dice: 'Create branch: gh-pages'</p>
+                <a href="img/online.jpg" data-lightbox="online"><img src="img/online.jpg" alt="" class="img-thumbnail"></a>
+                <p>Una vez que crearon el branch, van a 'Settings' (si no lo ubican está debajo del ojito que dice 'Unwatch') y luego simplemente bajan un poco hasta el bloque que dice 'GitHub Pages'. Allí van a ver un link que los dirige a la versión online y navegable de su sitio.</p>
+                <a href="img/online-2.jpg" data-lightbox="online-2"><img src="img/online-2.jpg" alt="" class="img-thumbnail"></a>
+                <p>Y eso es todo por el momento. Pueden compartir ese link directamente para mostrar el resultado de su trabajo, o bien el link del repositorio para que algún otro desarrollador lo descargue o lo que sea.</p>
+                <div class="alert bg-warning"><p><strong>Última aclaración:</strong> Con este método, si luego hacen cambios y vuelven a hacer un push a 'master' como ya vimos, la página no se les va a actualizar. O sea, me refiero a la versión online. En unos días les actualizo la guía para explicarles cómo funcionan bien las ramas y que puedan hacer cambios y luego sí verlos reflejados online.</p></div>
             </div>
         </div>
     </main>

@@ -87,3 +87,7 @@ nav.navbar {
 .img-thumbnail {
     max-width:960px;
 }
+
+.alert.bg-success p {
+    color:#fff;
+}
