@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi primer repositorio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav nav-pills navbar-nav" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-intro-tab" data-toggle="pill" href="#pills-intro" role="tab" aria-controls="pills-intro" aria-selected="true">Intro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-git-tab" data-toggle="pill" href="#pills-git" role="tab" aria-controls="pills-git" aria-selected="false">1. Git</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-github-tab" data-toggle="pill" href="#pills-github" role="tab" aria-controls="pills-github" aria-selected="false">2. GitHub</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-gitbash-tab" data-toggle="pill" href="#pills-gitbash" role="tab" aria-controls="pills-gitbash" aria-selected="false">3. GitBash</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-intro" role="tabpanel" aria-labelledby="pills-intro-tab">
+                <h1>Guía para aprender a usar Git / Github</h1>
+                <p>Hola a todos! Sé que en internet hay miles de guías sobre como hacer esto (y probablemente mejores), pero también sé que muchos son nuevos en esta área, o no tienen tiempo de buscar y probar si funciona lo que vieron, etc. Así que acá les dejo un paso a paso, completamente desde 0 y la metodología que suelo utilizar yo en el día a día (en casos poco complejos). Ojalá les sirva y cualquier cosa me preguntan por Discord.</p>
+                <h3>Resumen de cada paso:</h3>
+                <ol class="list-unstyled">
+                    <li><strong>1. GIT:</strong> Instalación de Git y apertura de la consola de comandos (GitBash)</li>
+                    <li><strong>2. GITHUB:</strong> Creación de la cuenta y de nuestro repositorio.</li>
+                    <li><strong>3. GITBASH:</strong> Metodología de trabajo con Git. Comandos más comunes y subida de archivos al repositorio.</li>
+                </ol>
+            </div>
+            <div class="tab-pane fade" id="pills-git" role="tabpanel" aria-labelledby="pills-git-tab">
+                <h2>1. Instalar GIT (<a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a>)</h2>
+                <p>La instalación en sí no tiene mucha ciencia. Si están en Windows simplemente le dan todo a 'Siguiente' y chau. La única opción que puede llegar a valer la pena, es una de las primeras que les pregunta cuál quieren que sea el editor de texto que van a usar con git (por defecto viene Nano). En lo que a esta guía respecta, no van a hacer uso del editor de git en ningún momento, pero dejo la aclaración por las dudas.</p>
+
+                <h2>2. Abrir la consola (Git Bash)</h2>
+                <p>El segundo y último paso por el momento, es simplemente que dejen abierta la consola para ya tenerla a mano. Si instalaron por primera vez, antes de terminar les da la opción ya de abrirla. Si ya lo tenían instalado, abren el menú de windows -> y escriben 'git' para que les aparezcan los resultados. Si no lo ven en el listado, es porque no lo instalaron o hubo algún problema con la instalación.<br/>
+                <strong>Usuarios de MAC:</strong> Abren la consola normal, la que ya viene por defecto y listo. Para chequear si tienen git instalado, usen el comando <code>git --version</code></p>
+                <a href="img/instalacion.jpg" data-lightbox="instalacion"><img src="img/instalacion.jpg" alt="" class="img-thumbnail"></a>
+            </div>
+            <div class="tab-pane fade" id="pills-github" role="tabpanel" aria-labelledby="pills-github-tab">
+                <h2>1. Registrarse/Logearse en Github (<a href="https://github.com/" target="_blank">https://github.com/</a>)</h2>
+                <p>Nada para explicar acá. Se hacen la cuenta y listo.</p>
+                <h2>2. Crear un nuevo repositorio</h2>
+                <p>Una vez que estén logeados en su cuenta, deberían ver algo como en la siguiente imagen. Simplemente apretan el botón verde que dice "New"</p>
+                <a href="img/paso1.jpg" data-lightbox="github-1"><img src="img/paso1.jpg" alt="" class="img-thumbnail"></a>
+                <p>En la pantalla de creación las dos opciones que nos interesan por el momento son: <br><strong>Nombre del repositorio</strong>: creo que esto es obvio y no necesita explicación. <br> <strong>Initialize this repository with a README</strong>: Esta es menos obvia, pero es importante porque nos sirve para la etapa siguiente en la que vamos a clonar el repositorio.</p>
+                <a href="img/paso2.jpg" data-lightbox="github-2"><img src="img/paso2.jpg" alt="" class="img-thumbnail"></a>
+                <p>Finalmente, si el repositorio se creó correctamente, vamos a ver una pantalla como la siguiente. Por el momento, lo único que nos interesa de acá es el botón verde que dice "Clone or download". Hacemos click ahí y copiamos la URL que nos aparece, para usarla en breve en la consola de comandos.</p>
+                <a href="img/paso3.jpg" data-lightbox="github-3"><img src="img/paso3.jpg" alt="" class="img-thumbnail"></a>
+            </div>
+            <div class="tab-pane fade" id="pills-gitbash" role="tabpanel" aria-labelledby="pills-gitbash-tab">
+                <div class="alert bg-warning mt-5"><p><strong>Aclaración:</strong> De acá en adelante va a estar todo orientado a Windows, en cuanto a rutas y ese tipo de cosas. No debería ser muy distinto en MAC pero puede que haya alguna diferencia. De cualquier forma, los comandos de git son todos los mismos.</p></div>
+                <h2>2. Moverse con la consola hacia el Escritorio (o la carpeta que quieran)</h2>
+                <p>Por defecto cuando abran GitBash, los va a dejar parados en la carpeta del usuario que actualmente está usando la máquina. Debería ser algo como <code>C:\Usuarios\@nombre_del_usuario</code><br>
+                Si no están seguros dónde están parados, ni cuál es el contenido de archivos en esa carpeta inicial, utilicen el comando <code>ls -a</code> para listar todos los archivos/carpetas en el directorio en el que se encuentran actualmente.</p>
+                <a href="img/gb-1.jpg" data-lightbox="gb-1"><img src="img/gb-1.jpg" alt="" class="img-thumbnail"></a>
+                <p>Nosotros nos vamos a mover hacia el Escritorio. Para eso usamos el comando <code>cd @nombre_de_la_carpeta</code>. En este caso puntual: <code>cd Desktop</code><br>
+                Para volver un nivel hacia atrás, usan lo siguiente: <code>cd ../</code></p>
+                <a href="img/gb-2.jpg" data-lightbox="gb-2"><img src="img/gb-2.jpg" alt="" class="img-thumbnail"></a>
+                <h2>3. Clonar el repositorio</h2>
+                <p>Una vez parados en la carpeta correspondiente vamos a clonar nuestro repositorio. Recuerden tener copiada la URL del mismo, sino copienla ahora.<br>
+                El comando en consola para hacer esto es: <code>git clone @url</code><br>
+                <code>ctrl + v</code> no les va a funcionar para pegar la URL, así que usen <code>shift + ins</code> o directamente click derecho -> pegar/paste<br>
+                Si el clonado es exitoso, van a ver algo como lo siguiente. Luego volvemos a hacer un <code>cd</code> para entrar en la carpeta que acabamos de clonar.</p>
+                <a href="img/gb-3.jpg" data-lightbox="gb-3"><img src="img/gb-3.jpg" alt="" class="img-thumbnail"></a>
+                <h2>4. Trabajar en nuestro repositorio</h2>
+                <p>Ok, ya tenemos el repositorio clonado y entramos a su carpeta. ¿Ahora qué? Bien, esta sería la etapa en la que uno empieza a trabajar en su proyecto. Entonces por ejemplo, crea su archivo .html y arma una estructura, luego crea su carpeta de css y agrega una hoja de estilos para que no sea un asco lo que se ve y así sucesivamente.<br>
+                Nosotros vamos a asumir que ya terminamos de trabajar con nuestros archivos, así que al final nos queda algo como esto:</p>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/lightbox.min.js"></script>
+</body>
+</html>
