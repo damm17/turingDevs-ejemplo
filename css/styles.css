@@ -49,6 +49,12 @@ code {
     color: #fff;
 }
 
+small {
+    font-size:1.2em;
+    margin-top:5rem;
+    display: block;
+}
+
 /* Layout */
 main {
     max-width: 90vw;
